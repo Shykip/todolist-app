@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body{
+    background-color: #090e1a;
+    color: #ffffff;
+    font-family: 'Lato', sans-serif;
+}
+
+.heading{
+    padding: 13% 20% 2% 20%;
+
+    h1{
+        font-weight: 900;
+        font-size: 50px;
+    }
+}
+
+.list_container{
+    padding: 0 20%;
+
+    .task{
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+        height: fit-content;
+        background-color: #111827;
+        border: solid 1px #262f3e;
+        border-radius: 20px;
+
+        h2{
+            font-weight: 900;
+            font-size: 32px;
+            margin-bottom: 35px;
+            display: flex;
+            align-items: center;
+
+            .status{
+                height: 32px;
+                width: 32px;
+                margin-right: 15px;
+                background-color: #262f3e;
+                border-radius: 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                img{
+                    height: 25px;
+                    display: none;
+                }
+            }
+            .status:hover{
+                img{
+                    display: flex;
+                }
+            }
+        }
+
+        .description{
+            font-weight: 500;
+            font-size: 18px;
+            color: #9ca2ad;
+            margin-bottom: 20px;
+        }
+        .date{
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: #ced2d8;
+
+            img{
+                height: 20px;
+                margin-right: 8px;
+            }
+        }
+    }
+}
