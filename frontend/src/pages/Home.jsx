@@ -39,7 +39,7 @@ function Home(props){
     })
 
     function handleEdit(id, title, description, due_date){
-        console.log(due_date)
+        
         setEditItem({
             id: id,
             title: title,
