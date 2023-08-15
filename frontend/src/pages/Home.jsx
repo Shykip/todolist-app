@@ -16,7 +16,9 @@ function Home(props){
     function fetchData(){
         axios.get('http://127.0.0.1:8000/task/')
             .then(response => {
-                setData(response.data)
+                const sortedData = response.data.sort((a, b) => new Date(a.due_date) - new Date(b.due_date));
+
+                setData(sortedData)
             })
             .catch(error => {
                 console.error('Error fetching data:', error)
