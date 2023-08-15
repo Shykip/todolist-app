@@ -10,35 +10,42 @@ function Home(props){
         event.preventDefault();
         let username = document.getElementById('reg_username').value
         let password = document.getElementById('reg_password').value
+        let cpassword = document.getElementById('reg_cpassword').value
 
-        let userExists = false
-        for (let user of users) {
-            if (user.username === username) {
-                sessionStorage.setItem("user_id", user.id);
-                userExists = true;
-            }
-        }
-
-        if(!userExists){
-
-            let formdata = new FormData()
-            formdata.append("username", username)
-            formdata.append("password", password)
-
-            axios.post('http://localhost:8000/user/create/',  formdata)
-                .then(response => {
-                    console.log(response.data.message)
-                    window.location.reload();
-                })
-                .catch(error => {
-                    console.error('Error posting data:', error)
-            })
+        if(password == cpassword){
             
-        } else {
-            alert("user already exists")
+
+            let userExists = false
+            for (let user of users) {
+                if (user.username === username) {
+                    sessionStorage.setItem("user_id", user.id);
+                    userExists = true;
+                }
+            }
+
+            if(!userExists){
+
+                let formdata = new FormData()
+                formdata.append("username", username)
+                formdata.append("password", password)
+
+                axios.post('http://localhost:8000/user/create/',  formdata)
+                    .then(response => {
+                        console.log(response.data.message)
+                        window.location.reload();
+                    })
+                    .catch(error => {
+                        console.error('Error posting data:', error)
+                })
+                
+            } else {
+                alert("user already exists")
+            }
+
         }
-
-
+        else {
+            alert("password doesnt match")
+        }
         
     };
 
