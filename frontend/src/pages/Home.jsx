@@ -220,7 +220,7 @@ function Home(props){
                                                 <div className="status"  onClick={() => handleStatusEdit(item.id, item.completed)}><img src={checkIcon} /></div>
                                                 {item.title}
                                             </h2>
-                                            <img src={editIcon} onClick={() => handleEdit(item.id, item.title, item.description, item.dueDate)} />
+                                            <img src={editIcon} onClick={() => handleEdit(item.id, item.title, item.description, item.due_date)} />
                                         </div>
                                         <p className="description">{item.description}</p>
                                         <div className="date_green"><img src={dateGreenIcon} />{year + " " + month + " " + day}</div>
