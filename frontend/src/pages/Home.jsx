@@ -17,7 +17,6 @@ function Home(props){
         axios.get('http://127.0.0.1:8000/task/')
             .then(response => {
                 setData(response.data)
-                console.log(data)
             })
             .catch(error => {
                 console.error('Error fetching data:', error)
@@ -38,6 +37,7 @@ function Home(props){
     })
 
     function handleEdit(id, title, description, due_date){
+        console.log(due_date)
         setEditItem({
             id: id,
             title: title,
@@ -174,7 +174,7 @@ function Home(props){
                                                 <div className="status" onClick={() => handleStatusEdit(item.id, item.completed)}></div>
                                                 {item.title}
                                             </h2>
-                                            <img src={editIcon} onClick={() => handleEdit(item.id, item.title, item.description, item.dueDate)} />
+                                            <img src={editIcon} onClick={() => handleEdit(item.id, item.title, item.description, item.due_date)} />
                                         </div>
                                         <p className="description">{item.description}</p>
 
