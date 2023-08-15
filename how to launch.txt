@@ -6,3 +6,7 @@
 5 new terminal > cd todolist-app > cd backend > py manage.py runserver
 
 6: open react server link. http://localhost:5173/
+
+default login code
+username = admin
+password = admin123
