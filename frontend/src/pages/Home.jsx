@@ -17,6 +17,7 @@ function Home(props){
         axios.get('http://127.0.0.1:8000/task/')
             .then(response => {
                 setData(response.data)
+                console.log(data)
             })
             .catch(error => {
                 console.error('Error fetching data:', error)
@@ -69,14 +70,13 @@ function Home(props){
         let title = document.getElementById('edit_title').value
         let description = document.getElementById('edit_description').value
         let dueDate = document.getElementById('edit_dueDate').value
-        let user_id = userID
         let id = editItem.id
 
         const updatedTask = {
             title: title,
+            user_id: userID,
             description: description,
-            due_date: dueDate,
-            user_id: user_id,
+            due_date: dueDate
         };
 
         axios.put(`http://127.0.0.1:8000/task/${id}/`, updatedTask)

@@ -14,8 +14,8 @@ class TaskCreate(generics.CreateAPIView):
     serializer_class = TaskSerializer
 
 class TaskUpdate(generics.RetrieveUpdateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
 
 
 
