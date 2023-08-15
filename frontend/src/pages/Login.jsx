@@ -28,16 +28,12 @@ function Home(props){
             axios.post('http://localhost:8000/user/create/',  formdata)
                 .then(response => {
                     console.log(response.data.message)
+                    window.location.reload();
                 })
                 .catch(error => {
                     console.error('Error posting data:', error)
             })
-
-            setMode("Login")
-            window.location.reload();
-            console.log(users)
-            document.getElementById('reg_username').value = ""
-            document.getElementById('reg_password').value = ""
+            
         } else {
             alert("user already exists")
         }
