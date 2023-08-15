@@ -3,6 +3,6 @@
 3: cd todolist-app
 
 4: cd frontend > npm install > npm run dev
-5 new terminal > cd todolist-app > cd backend > py manage.py runserver
+5 new terminal > cd todolist-app > cd backend > pip install -r requirements.txt > py manage.py runserver
 
 6: open react server link. http://localhost:5173/
