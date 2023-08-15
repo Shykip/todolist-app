@@ -124,6 +124,19 @@ function Home(props){
         props.logout()
     }
 
+    function deleteTask() {
+        let taskId = editItem.id
+        axios.delete(`http://127.0.0.1:8000/task/${taskId}/delete/`)
+            .then(response => {
+                console.log(response);
+                fetchData()
+                setpage("view")
+            })
+            .catch(error => {
+                console.error('Error deleting task:', error);
+            });
+    }
+
     return (
         <>
             <div className="heading">
@@ -251,7 +264,7 @@ function Home(props){
                                 <input type="text" name='title' id='edit_title' defaultValue={editItem.title}  required />
                             </div>
                             
-                            <img src={deleteIcon} alt="" />
+                            <img src={deleteIcon} alt="" onClick={deleteTask} />
                         </div>
 
                         <label htmlFor="description">Description</label>
