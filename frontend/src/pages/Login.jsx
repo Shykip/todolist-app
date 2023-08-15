@@ -52,7 +52,6 @@ function Home(props){
         axios.get('http://127.0.0.1:8000/user/')
             .then(response => {
                 setUsers(response.data)
-                console.log(users)
             })
             .catch(error => {
                 console.error('Error fetching data:', error)

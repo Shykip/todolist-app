@@ -6,6 +6,7 @@ import editIcon from '../assets/images/edit.png'
 import deleteIcon from '../assets/images/delete.png'
 import { useState, useEffect } from 'react'
 import axios from 'axios';
+import React from 'react'
 
 function Home(props){
 
@@ -151,9 +152,9 @@ function Home(props){
                         const year = due_date.getFullYear()
 
                         return (
-                            <>  
+                            <React.Fragment  key={item.id}>  
                                 {!item.completed && item.user_id == userID ?
-                                    <div className="task" key={item.id}>
+                                    <div className="task">
                             
                                         <div className="task_heading">
                                             <h2>
@@ -176,7 +177,7 @@ function Home(props){
                                     ""
                                 }
                                 
-                            </>
+                            </React.Fragment>
                         )
                     })}
 
@@ -195,7 +196,7 @@ function Home(props){
                         const year = due_date.getFullYear()
 
                         return (
-                            <>  
+                            <React.Fragment  key={item.id}> 
                                 {item.completed && item.user_id == userID ?
                                     <div className="task" key={item.id}>
                             
@@ -214,7 +215,7 @@ function Home(props){
                                     ""
                                 }
                                 
-                            </>
+                            </React.Fragment>
                         )
                     })}
 

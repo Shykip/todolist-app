@@ -8,7 +8,6 @@ function App() {
   let [logged , setLogged] = useState(false)
 
   useEffect(() => {
-    console.log(sessionStorage.getItem('user_id'))
     if(sessionStorage.getItem('user_id') !== null){
       setLogged(true)
     }
