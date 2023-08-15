@@ -11,22 +11,43 @@ function Home(props){
         let username = document.getElementById('reg_username').value
         let password = document.getElementById('reg_password').value
 
-        let formdata = new FormData()
-        formdata.append("username", username)
-        formdata.append("password", password)
+        let userExists = false
+        for (let user of users) {
+            if (user.username === username) {
+                sessionStorage.setItem("user_id", user.id);
+                userExists = true;
+            }
+        }
 
-        axios.post('http://localhost:8000/user/create/',  formdata)
-            .then(response => {
-                console.log(response.data.message)
+        if(!userExists){
+
+            let formdata = new FormData()
+            formdata.append("username", username)
+            formdata.append("password", password)
+
+            axios.post('http://localhost:8000/user/create/',  formdata)
+                .then(response => {
+                    console.log(response.data.message)
+                })
+                .catch(error => {
+                    console.error('Error posting data:', error)
             })
-            .catch(error => {
-                console.error('Error posting data:', error)
-        })
 
-        setMode("Login")
+            setMode("Login")
+            window.location.reload();
+            console.log(users)
+            document.getElementById('reg_username').value = ""
+            document.getElementById('reg_password').value = ""
+        } else {
+            alert("user already exists")
+        }
+
+
+        
     };
 
     const [users, setUsers] = useState([])
+
     function fetchUserData(){
         axios.get('http://127.0.0.1:8000/user/')
             .then(response => {
