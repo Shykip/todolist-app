@@ -1,22 +1,32 @@
 import './style/app.scss'
-import dateIcon from './assets/images/date.png'
-import checkIcon from './assets/images/check.png'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import { useState, useEffect } from 'react'
 
 function App() {
 
+  let [logged , setLogged] = useState(false)
+
+  useEffect(() => {
+    console.log(sessionStorage.getItem('user_id'))
+    if(sessionStorage.getItem('user_id') !== null){
+      setLogged(true)
+    }
+}, [])
+
+  
+
+  let handleLogged = () => {
+    setLogged(true)
+  }
+
+  let handleLogout = () => {
+    setLogged(false)
+  }
+
   return (
     <> 
-      <div className="heading"><h1>Todo List</h1></div>
-      
-      <div className="list_container">
-
-        <div className="task">
-          <h2><div className="status"><img src={checkIcon} /></div> Workout</h2>
-          <p className="description">30 min intense cardio & 20 min strength training...</p>
-          <div className="date"><img src={dateIcon} />2020 Jan 13</div>
-        </div>
-
-      </div>
+      {logged ? <Home logout={handleLogout} /> : <Login logged={handleLogged} />}
     </>
   )
 }

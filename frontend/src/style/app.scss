@@ -7,6 +7,27 @@
     text-decoration: none;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111827;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #262f3e;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #262f3e;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
 body{
     background-color: #090e1a;
     color: #ffffff;
@@ -15,10 +36,36 @@ body{
 
 .heading{
     padding: 13% 20% 2% 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     h1{
         font-weight: 900;
         font-size: 50px;
+
+        p{
+            font-weight: 900;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    }
+
+    .menu{
+        color: #262f3e;
+        font-size: 18px;
+        font-weight: 800;
+        display: flex;
+
+        p{
+            margin-left: 80px;
+            cursor: pointer;
+        }
+
+        .onGlow{
+            color: white;
+        }
     }
 }
 
@@ -33,34 +80,44 @@ body{
         background-color: #111827;
         border: solid 1px #262f3e;
         border-radius: 20px;
+        margin-bottom: 40px;
 
-        h2{
-            font-weight: 900;
-            font-size: 32px;
-            margin-bottom: 35px;
+        .task_heading{
             display: flex;
             align-items: center;
+            margin-bottom: 35px;
+            justify-content: space-between;
 
-            .status{
-                height: 32px;
-                width: 32px;
-                margin-right: 15px;
-                background-color: #262f3e;
-                border-radius: 5px;
+            h2{
+                font-weight: 900;
+                font-size: 32px;
                 display: flex;
-                justify-content: center;
                 align-items: center;
-                cursor: pointer;
-
-                img{
-                    height: 25px;
-                    display: none;
+    
+                .status{
+                    height: 32px;
+                    width: 32px;
+                    margin-right: 15px;
+                    background-color: #262f3e;
+                    border-radius: 5px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+    
+                    img{
+                        height: 25px;
+                    }
                 }
             }
-            .status:hover{
-                img{
-                    display: flex;
-                }
+
+            img{
+                height: 40px;
+                cursor: pointer;
+            }
+            img:hover{
+                transition: all linear .1s;
+                transform: scale(1.05);
             }
         }
 
@@ -81,5 +138,311 @@ body{
                 margin-right: 8px;
             }
         }
+
+        .date_red{
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: #f63838;
+
+            img{
+                height: 20px;
+                margin-right: 8px;
+            }
+        }
+
+        .date_green{
+            display: flex;
+            align-items: center;
+            font-weight: 700;
+            color: #3ef638;
+
+            img{
+                height: 20px;
+                margin-right: 8px;
+            }
+        }
     }
+
+    .completed_tasks{
+        font-weight: 700;
+        font-size: 18px;
+        width: 100%;
+        color: #9ca2ad;
+        margin-top: 80px;
+    }
+    hr{
+        border: solid 1px #262f3e;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+}
+
+.create_task{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20%;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        background-color: #111827;
+        border: solid 1px #262f3e;
+        padding: 40px;
+        border-radius: 20px;
+
+        label{
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        input{
+            margin-bottom: 20px;
+            height: 35px;
+            width: 280px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: #262f3e;
+            color: white;
+        }
+
+        textarea{
+            margin-bottom: 20px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: #262f3e;
+            color: white;
+        }
+
+        button{
+            border-radius: 5px;
+            height: 40px;
+            width: 280px;
+            border: none;
+            background-color: #090e1a;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: #327581;
+        }
+    }
+}
+
+.edit_task{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20%;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        background-color: #111827;
+        border: solid 1px #262f3e;
+        padding: 40px;
+        border-radius: 20px;
+
+        .edit_heading{
+            display: flex;
+            justify-content: space-between;
+
+            .edit_heading_left{
+                display: flex;
+                flex-direction: column;
+            }
+
+            img{
+                height: 40px;
+                cursor: pointer;
+            }
+            img:hover{
+                transition: all linear .1s;
+                transform: scale(1.05);
+            }
+        }
+
+        label{
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        input{
+            margin-bottom: 20px;
+            height: 35px;
+            width: 280px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: #262f3e;
+            color: white;
+        }
+
+        textarea{
+            margin-bottom: 20px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: #262f3e;
+            color: white;
+        }
+
+        button{
+            border-radius: 5px;
+            height: 40px;
+            width: 280px;
+            border: none;
+            background-color: #090e1a;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: #327581;
+        }
+    }
+}
+
+.login_box{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        background-color: #111827;
+        border: solid 1px #262f3e;
+        padding: 40px;
+        border-radius: 20px;
+
+        label{
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        input{
+            margin-bottom: 20px;
+            height: 35px;
+            width: 280px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        p{
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+        p:hover{
+            cursor: pointer;
+            color: #327581;
+        }
+
+        button{
+            border-radius: 5px;
+            height: 40px;
+            width: 280px;
+            border: none;
+            background-color: #090e1a;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: #327581;
+        }
+    }
+
+}
+
+.signup_box{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        background-color: #111827;
+        border: solid 1px #262f3e;
+        padding: 40px;
+        border-radius: 20px;
+
+        label{
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        input{
+            margin-bottom: 20px;
+            height: 35px;
+            width: 280px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        p{
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+        p:hover{
+            cursor: pointer;
+            color: #327581;
+        }
+
+        button{
+            border-radius: 5px;
+            height: 40px;
+            width: 280px;
+            border: none;
+            background-color: #327581;
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        button:hover{
+            cursor: pointer;
+            background-color: #090e1a;
+        }
+    }
+
 }
