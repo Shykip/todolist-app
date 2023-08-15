@@ -1,8 +1,7 @@
 1: open folder and its terminal with location
-2: git clone https://github.com/Shykip/todolist-app.git
-3: cd todolist-app
+2: git clone https://github.com/Shykip/todolist-app.git .
 
-4: cd frontend > npm install > npm run dev
-5 new terminal > cd todolist-app > cd backend > py manage.py runserver
+3: cd frontend > npm install > npm run dev
+4 new terminal > cd backend > py manage.py runserver
 
 6: open react server link. http://localhost:5173/
