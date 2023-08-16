@@ -8,15 +8,13 @@ Backend : Django
 
 ### How to run
 Open Foler and its terminal
-
-    $
+    
     git clone https://github.com/Shykip/todolist-app.git .
     cd backend
     py manage.py runserver
 
 In New Terminal
 
-    $
     cd frontend
     npm install
     npm run dev
