@@ -1,6 +1,6 @@
 # TodoList
 
-### Languages
+## Languages
 Frontend : React
 
 Backend : Django
