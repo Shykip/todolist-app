@@ -8,6 +8,7 @@ Backend : Django
 
 ### How to run
 1: open folder and its terminal with location
+    $git clone https://github.com/Shykip/todolist-app.git .
 2: git clone https://github.com/Shykip/todolist-app.git .
 3: cd backend > py manage.py runserver
 4: new terminal > cd frontend > npm install > npm run dev
